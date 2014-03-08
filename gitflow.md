@@ -5,10 +5,10 @@ develop 分支：最新的开发分支，所有开发人员的本地分支最终
 
 ## 每天每个开发人员的工作流程
 
-1.获取develop分支最新代
+1.获取develop分支最新代码
 
     git checkout develop
-    git pull origin develop
+	git pull origin develop
 
 2.创建本地分支
 	
