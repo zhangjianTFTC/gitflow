@@ -43,6 +43,12 @@ develop 分支：最新的开发分支，所有开发人员的本地分支最终
 2.打上tag，如v1.0
 
     git tag -a v1.0 -m 'my version 1.0'
+    # 如果tag打错了
+    # 删除本地tag
+    git tag -d v1.0
+    # 删除远程tag
+    git push origin --delete tag v1.0
+
 
 3.把tag信息推送到远端服务器
 
