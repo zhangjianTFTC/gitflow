@@ -7,12 +7,13 @@ develop 分支：最新的开发分支，所有开发人员的本地分支最终
 
 1.获取develop分支最新代码
 
-    git checkout develop
+   	git checkout develop
 	git pull origin develop
 
 2.创建本地分支
 	
-	git checkout -b today_branch develop
+	git fetch origin
+	git checkout -b today_branch origin/develop
 
 3.在本地分支上进行开发
 	
@@ -21,13 +22,18 @@ develop 分支：最新的开发分支，所有开发人员的本地分支最终
 4.一天开发结束，把本地分支合并到develop分支
 	
 	# 获取最新develop
-	git checkout develop
-	git pull origin develop
+	git fetch origin
 	# 本地合并
-	git merge today_branch
-	# 解决出现的冲突,提交代码
-	add && commit 
+	git rebase origin/develop
+	# 解决出现的冲突
+	git add
+	git rebase --continue
+	
 	# 推送develop到服务器
+	git checkout develop
+	git fetch origin
+	git rebase origin/develop
+	git rebase today_branch
 	git push origin develop
 
 	# 删除本地分支
